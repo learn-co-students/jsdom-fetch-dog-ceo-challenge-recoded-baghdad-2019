@@ -16,3 +16,32 @@ window.addEventListener("load", function(){
     })
   })
 })
+
+const breedUrl = 'https://dog.ceo/api/breeds/list/all'
+window.addEventListener('load', function(){
+  let breeds
+  let dogBreeds= document.getElementById("dog-breeds")
+  fetch(breedUrl).then(function(response){
+    return response.json()
+  }).then(function(data){
+    breeds = data.message
+    console.log(breeds)
+    let breedList
+    for (breed in breeds){
+    breedList = document.createElement("li")
+    
+    breedList.innerHTML = `<li id="${breed}">${breed}</li>`
+    dogBreeds.appendChild(breedList)
+//============================CHALLENGE 3=============================  
+  
+    }}).then(function(e){
+      african = document.getElementById("african")
+      console.log(african)
+      african.addEventListener('click', function(){
+        african.style.color = "blue";
+      })
+    })
+
+})
+
+let african
