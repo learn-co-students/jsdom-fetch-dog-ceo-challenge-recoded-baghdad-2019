@@ -34,8 +34,8 @@ window.addEventListener('load', function(){
     dogBreeds.appendChild(breedList)
 //============================CHALLENGE 3=============================  
   
-    }}).then(function(e){
-      african = document.getElementById("african")
+    }}).then(function(){
+      let african = document.getElementById("african")
       console.log(african)
       african.addEventListener('click', function(){
         african.style.color = "blue";
@@ -44,4 +44,4 @@ window.addEventListener('load', function(){
 
 })
 
-let african
+// let african
