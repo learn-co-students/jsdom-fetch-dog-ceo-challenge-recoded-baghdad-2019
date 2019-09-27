@@ -25,7 +25,6 @@ window.addEventListener('load', function(){
     return response.json()
   }).then(function(data){
     breeds = data.message
-    console.log(breeds)
     let breedList
     for (breed in breeds){
       breedList = document.createElement("li")
@@ -36,7 +35,6 @@ window.addEventListener('load', function(){
   
     }}).then(function(){
       let african = document.getElementById("african")
-      console.log(african)
       african.addEventListener('click', function(){
         african.style.color = "blue";
       })
@@ -47,26 +45,31 @@ window.addEventListener('load', function(){
 // let african
 
 function listFilter(e){
+    breedList.innerHTML = ""
+    for (breed in breeds){
+      if (breed[0] == e){
+      newElement = document.createElement('li')
+      newElement.innerHTML = `<li id="${breed}">${breed}</li>`
+      breedList.appendChild(newElement)
+    }}
 }
 
 window.addEventListener('change', function(){
   let breedDropdown = document.querySelector('#breed-dropdown')
   breedList = document.querySelector("#dog-breeds")
   let filterLetter
-  console.log(breeds)
   switch (breedDropdown.value){
     case 'a':
-      breedList.innerHTML = ""
-      for ()
+      listFilter(breedDropdown.value)
       break;
     case 'b':
-      console.log('b');
+      listFilter(breedDropdown.value)
       break;
     case 'c':
-      console.log('c');
+      listFilter(breedDropdown.value)
       break;
     case 'd':
-      console.log('d');
+      listFilter(breedDropdown.value)
       break;
   }
 })
